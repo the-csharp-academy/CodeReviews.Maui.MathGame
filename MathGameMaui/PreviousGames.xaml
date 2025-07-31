@@ -1,0 +1,72 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGameMaui.PreviousGames">
+
+    <Grid RowDefinitions="40,*,Auto">
+
+        <!-- HEADER (Fixed at top) -->
+        <VerticalStackLayout
+            Grid.Row="0"
+            Padding="20,10,20,20"
+            Spacing="0"
+            BackgroundColor="Red">
+            <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="50">
+                <Label Grid.Column="0" Text="Date" FontSize="16"/>
+                <Label Grid.Column="1" Text="Type" FontSize="16"/>
+                <Label Grid.Column="2" Text="Score" FontSize="16"/>
+                <Label Grid.Column="3" Text="" FontSize="16"/>
+            </Grid>
+        </VerticalStackLayout>
+
+        <!-- SCROLLABLE CONTENT -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="0,20,20,20" Spacing="10">
+                <CollectionView x:Name="gamesList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*,*,*,*" 
+                                  RowDefinitions="50"
+                                  >
+                                <Label 
+                                    Grid.Column="0" 
+                                    Text="{Binding DatePlayed, StringFormat='{0:d}'}" 
+                                    FontSize="16"
+                                    VerticalOptions="Center"/>
+                                <Label 
+                                    Grid.Column="1" 
+                                    Text="{Binding Type}" 
+                                    FontSize="16"
+                                    VerticalOptions="Center"/>
+                                <Label 
+                                    Grid.Column="2" 
+                                    Text="{Binding Score}" 
+                                    FontSize="16"
+                                    VerticalOptions="Center"/>
+                                <ImageButton 
+                                    Source="trash.png"
+                                    Grid.Column="3"
+                                    Clicked="OnDelete"
+                                    VerticalOptions="Center"
+                                    BindingContext="{Binding Id}"
+                                    BackgroundColor="Coral"
+                                    CornerRadius="10"
+                                    />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- FOOTER BUTTON -->
+        <Button 
+            Grid.Row="2"
+            Text="Back To Menu"
+            Clicked="OnBack"
+            Margin="20"
+            HorizontalOptions="Fill"
+            VerticalOptions="End"/>
+    </Grid>
+
+</ContentPage>
+

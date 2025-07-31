@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGameMaui", "MathGameMaui\MathGameMaui.csproj", "{770A6C89-69E2-4779-9000-AB6109E65848}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{770A6C89-69E2-4779-9000-AB6109E65848}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CB82E8E-F889-48B6-8619-37E76294D52E}
+	EndGlobalSection
+EndGlobal
