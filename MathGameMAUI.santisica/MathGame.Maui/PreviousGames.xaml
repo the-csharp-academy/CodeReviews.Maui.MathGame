@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGame.Maui.PreviousGames"
+             BackgroundImageSource="bg.jpg"
+            >
+    <VerticalStackLayout
+        Padding="200,100,200,50">
+        <Grid 
+            x:Name="DataDisplaySection"
+            IsVisible="False"
+            ColumnDefinitions="*,*,*,*"
+              RowDefinitions="50">
+            <Label Grid.Column="0" Text="Date" FontSize="32"/>
+            <Label Grid.Column="1" Text="Type" FontSize="32"/>
+            <Label Grid.Column="2" Text="Score" FontSize="32"/>
+        </Grid>
+        <CollectionView x:Name="gamesList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="35"
+                          ColumnDefinitions="*,*,*,*">
+                        
+                        <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="16"/>
+                        <Label Grid.Column="1" Text="{Binding Type}" FontSize="16"/>
+                        <Label Grid.Column="2" Text="{Binding Score}" FontSize="16"/>
+                        <ImageButton 
+                            Source="trash.jpg" 
+                            HeightRequest="60"
+                            WidthRequest="60" 
+                            Grid.Column="3" 
+                            CommandParameter="{Binding Id}" 
+                            Clicked="OnDelete" 
+                            Padding="10"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    Spacing="50">
+                    <Label
+    Text="No games yet"
+    FontSize="32"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"/>
+
+                    <Button
+    x:Name="BackToMenuBtn"
+    Text="Back To Menu"
+    Clicked="OnBackToMenu"
+    HorizontalOptions="Center"
+FontSize="20"/>
+                </VerticalStackLayout>
+                
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
